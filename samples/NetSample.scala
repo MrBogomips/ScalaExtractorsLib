@@ -13,6 +13,10 @@ object NetSample {
     "1.2.3.4" match {
       case ip @ IP4.doesMatch() => println(s"$ip looks like a valid IP4 address")
     }
+
+    "192.168.0.1" match {
+      case IP4_ClassC(net, host) => println(s"Host $host belongs to net $net")
+    }
   }
 }
 
