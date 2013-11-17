@@ -18,9 +18,7 @@ Extractors supported (or planned)
 - [ ] net/Email
 - [ ] io/File
 - [ ] io/WinFile
-
 - [ ] biz/IBAN
 - [ ] biz/it/CodiceFiscale
-
 - [ ] crypto/SHA1
 - [ ] crypto/MD5
