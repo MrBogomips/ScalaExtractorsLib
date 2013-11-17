@@ -10,4 +10,5 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "1.9.2" % "test"
 )
 
+initialCommands := "import com.computableideas.scalaextractorslib._"
 

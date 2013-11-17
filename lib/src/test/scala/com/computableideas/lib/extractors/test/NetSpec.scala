@@ -29,7 +29,7 @@ class NetSpec extends CommonSuite {
 	}
 	"Java Inet 6 Addresses" should "be extracted through IP6 extractor" in {
 	  val ip1: jIP = jIP.getByName("2001:0db8:85a3:0000:0000:8a2e:0370:7334")
-	  assert(IP6.unapply(ip1) === Some(0x2001, 0x0db8, 0x85a3, 0x0000, 0x0000, 0x8a2e, 0x0370, 0x7334))
+	  assert(IP6.unapply(ip1) === Some(0x2001, 0xdb8, 0x85a3, 0, 0, 0x8a2e, 0x0370, 0x7334))
 	  
 	  val ip2: jIP = jIP.getByName("FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF")
 	  assert(IP6.unapply(ip2) === Some(0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF))
