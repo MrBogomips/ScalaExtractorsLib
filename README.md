@@ -12,22 +12,15 @@ To run the samples issue:
 Extractors supported (or planned)
 ---------------------------------
 
-- net/
--- IP4		Internet Address v4
--- IP6		Internet Address v6 (wip)
--- Domain
--- Email
+- [x] net/IP4: Internet Address v4
+- [.] net/IP6: Internet Address v6 (wip)
+- [ ] net/Domain
+- [ ] net/Email
+- [ ] io/File
+- [ ] io/WinFile
 
-io/
-	File
-	WinFile
+- [ ] biz/IBAN
+- [ ] biz/it/CodiceFiscale
 
-biz/
-	IBAN
-	
-biz/it/
-	CodiceFiscale
-
-crypto/
-	SHA1
-	MD5
+- [ ] crypto/SHA1
+- [ ] crypto/MD5
