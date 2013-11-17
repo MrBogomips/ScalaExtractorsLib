@@ -10,6 +10,7 @@ To run the samples issue:
 	samples/run
 
 Extractors supported (or planned)
+---------------------------------
 
 net/
 	IP4		Internet Address v4
