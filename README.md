@@ -12,11 +12,11 @@ To run the samples issue:
 Extractors supported (or planned)
 ---------------------------------
 
-net/
-	IP4		Internet Address v4
-	IP6		Internet Address v6 (wip)
-	Domain
-	Email
+- net/
+-- IP4		Internet Address v4
+-- IP6		Internet Address v6 (wip)
+-- Domain
+-- Email
 
 io/
 	File
