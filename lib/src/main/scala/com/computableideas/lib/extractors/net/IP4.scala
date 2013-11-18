@@ -57,15 +57,15 @@ private[net] trait IP4_Class {
 }
 
 object IP4_ClassA extends IP4_Class {
-  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0x80) >> 7 == 0
+  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0x80) == 0x00
 }
 
 object IP4_ClassB extends IP4_Class {
-  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0xC0) >> 6 == 2
+  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0xC0) == 0x80
 }
 
 object IP4_ClassC extends IP4_Class {
-  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0xE0) >> 5 == 6
+  def checkClass(a: Int, b: Int, c: Int, d: Int) = (a & 0xE0) == 0xC0
 }
 
 object IP4_ClassD extends IP4_Class {
