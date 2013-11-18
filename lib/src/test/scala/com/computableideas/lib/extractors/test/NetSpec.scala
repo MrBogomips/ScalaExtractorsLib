@@ -28,64 +28,64 @@ class NetSpec extends CommonSuite {
 	}
 
 	"IP4 of a Class A" should "be extracted from 0.0.0.0" in {
-		IP4_ClassA.unapply("0.0.0.0") should be (Some(0,0,0,0))
+		IP4.ClassA.unapply("0.0.0.0") should be (Some(0,0,0,0))
 	} 
 	it should "be extracted until to 127.255.255.255" in {
-		IP4_ClassA.unapply("127.255.255.255") should be (Some(127,255,255,255))
+		IP4.ClassA.unapply("127.255.255.255") should be (Some(127,255,255,255))
 	}
 	it should "not be extracted from 128.0.0.0" in {
-		IP4_ClassA.unapply("128.0.0.0") should not be defined
+		IP4.ClassA.unapply("128.0.0.0") should not be defined
 	}
 	it should "not be extracted until to 255.255.255.255" in {
-		IP4_ClassA.unapply("255.255.255.255") should not be defined
+		IP4.ClassA.unapply("255.255.255.255") should not be defined
 	}
 
 	"IP4 of a Class B" should "be extracted from 128.0.0.0" in {
-		IP4_ClassB.unapply("128.0.0.0") should be (Some(128, 0, 0, 0))
+		IP4.ClassB.unapply("128.0.0.0") should be (Some(128, 0, 0, 0))
 	} 
 	it should "be extracted until to 191.255.255.255" in {
-		 IP4_ClassB.unapply("191.255.255.255") should be (Some(191, 255, 255, 255))
+		 IP4.ClassB.unapply("191.255.255.255") should be (Some(191, 255, 255, 255))
 	}
 	it should "not be extracted from 127.255.255.255" in {
-		IP4_ClassB.unapply("127.255.255.255") should not be defined
+		IP4.ClassB.unapply("127.255.255.255") should not be defined
 	}
 	it should "not be extracted from 192.0.0.0" in {
-		IP4_ClassB.unapply("192.0.0.0") should not be defined
+		IP4.ClassB.unapply("192.0.0.0") should not be defined
 	}
 	it should "not be extracted until to 223.255.255.255" in {
-		IP4_ClassB.unapply("223.255.255.255") should not be defined
+		IP4.ClassB.unapply("223.255.255.255") should not be defined
 	}
 
 	"IP4 of a Class C" should "be extracted from 192.0.0.0" in {
-		IP4_ClassC.unapply("192.0.0.0") should be (Some(192,0,0,0))
+		IP4.ClassC.unapply("192.0.0.0") should be (Some(192,0,0,0))
 	} 
 	it should "be extracted until to 223.255.255.255" in {
-		IP4_ClassC.unapply("223.255.255.255") should be (Some(223,255,255,255))
+		IP4.ClassC.unapply("223.255.255.255") should be (Some(223,255,255,255))
 	}
 	it should "not be extracted from 224.0.0.0" in {
-		IP4_ClassC.unapply("224.0.0.0") should not be defined
+		IP4.ClassC.unapply("224.0.0.0") should not be defined
 	}
 	it should "not be extracted until to 239.255.255.255" in {
-		IP4_ClassC.unapply("239.255.255.255") should not be defined
+		IP4.ClassC.unapply("239.255.255.255") should not be defined
 	}
 
 	"IP4 of a Class D" should "be extracted from 224.0.0.0" in {
-		IP4_ClassD.unapply("224.0.0.0") should be (Some(224, 0, 0, 0))
+		IP4.ClassD.unapply("224.0.0.0") should be (Some(224, 0, 0, 0))
 	}
 	it should "be extracted until to 239.255.255.255" in {
-		IP4_ClassD.unapply("239.255.255.255") should be (Some(239, 255, 255, 255))	
+		IP4.ClassD.unapply("239.255.255.255") should be (Some(239, 255, 255, 255))	
 	}
 	it should "not be extracted from 240.0.0.0" in {
-		IP4_ClassD.unapply("240.0.0.0") should not be defined
+		IP4.ClassD.unapply("240.0.0.0") should not be defined
 	}
 	it should "not be extracted from 223.255.255.255" in {
-		IP4_ClassD.unapply("223.255.255.255") should not be defined
+		IP4.ClassD.unapply("223.255.255.255") should not be defined
 	}
 	"IP4 of a Class E" should "be extracted from 240.0.0.0" in {
-		IP4_ClassE.unapply("240.0.0.0") should be (Some(240, 0, 0, 0))	
+		IP4.ClassE.unapply("240.0.0.0") should be (Some(240, 0, 0, 0))	
 	}
 	it should "be extracted until to 255.255.255.255" in {
-		IP4_ClassE.unapply("255.255.255.255") should be (Some(255, 255, 255, 255))		
+		IP4.ClassE.unapply("255.255.255.255") should be (Some(255, 255, 255, 255))		
 	}
 
 	"An IP4 address" should "belong to just one class" in {
@@ -97,11 +97,11 @@ class NetSpec extends CommonSuite {
 		} yield s"$a.$b.$c.$d"
 		forAll (addrs) { ip4s =>
 			var c: Int = 0
-			if (IP4_ClassA.unapply(ip4s).isDefined) c = c + 1
-			if (IP4_ClassB.unapply(ip4s).isDefined) c = c + 1
-			if (IP4_ClassC.unapply(ip4s).isDefined) c = c + 1
-			if (IP4_ClassD.unapply(ip4s).isDefined) c = c + 1
-			if (IP4_ClassE.unapply(ip4s).isDefined) c = c + 1
+			if (IP4.ClassA.unapply(ip4s).isDefined) c = c + 1
+			if (IP4.ClassB.unapply(ip4s).isDefined) c = c + 1
+			if (IP4.ClassC.unapply(ip4s).isDefined) c = c + 1
+			if (IP4.ClassD.unapply(ip4s).isDefined) c = c + 1
+			if (IP4.ClassE.unapply(ip4s).isDefined) c = c + 1
 			c should be (1)
 		}
 	}
