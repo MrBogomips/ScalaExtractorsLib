@@ -24,5 +24,6 @@ Extractors supported (or planned)
 - [ ] io/WinFile
 - [ ] biz/IBAN
 - [ ] biz/it/CodiceFiscale
+- [x] biz/it/PartitaIva
 - [ ] crypto/SHA1
 - [ ] crypto/MD5

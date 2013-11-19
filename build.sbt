@@ -1,4 +1,4 @@
-name := "ScalaExtractorsLib"
+name := "ScalaExtractorsLibRoot"
 
 organization := "com.computableideas"
 
